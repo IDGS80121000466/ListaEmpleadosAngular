@@ -1,0 +1,41 @@
+<div class="row mt-2">
+    <div id="divCatalogo" class="col">
+        <div class="card">
+            <div class="card-header text-white card-hform" style="background-color: #0B6138">
+                Listado de Empleados
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="tblEmpleados" class="table table-hover table-bordered">                                                        
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">N&uacute;m.</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Fecha Nacimiento</th>
+                                <th>Sexo</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let empleado of empleados">
+                                <td>{{ empleado.numEmpleado }}</td>
+                                <td>{{ empleado.nombre }}</td>
+                                <td>{{ empleado.correo }}</td>
+                                <td>{{ empleado.telefono }}</td>
+                                <td>{{ empleado.fechaNacimiento }}</td>
+                                <td>{{ empleado.sexo }}</td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" (click)="eliminarEmpleado(empleado.numEmpleado)">
+                                        <i class="fas fa-trash-alt"></i> Eliminar
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
